@@ -1,0 +1,19 @@
+// app/page.tsx
+import ItemList from "./item.list";
+
+
+// Main page component
+
+
+
+export default function Page() {
+  return (
+    <main className="min-h-screen bg-gray-100 p-8">
+      <h1 className="text-3xl font-bold text-pink-500 mb-6">
+        Shopping List
+      </h1>
+
+      <ItemList />
+    </main>
+  );
+}

@@ -5,12 +5,19 @@ export default function assignments() {
         <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
           CPRG 306: Web Development 2
         </h1>
-                {/* Link to Week 2 page */}
-                <a
+        {/* Link to Week 2 */}
+        <a
           href="/week-2"
-          className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400"
+          className="text-pink-400 underline hover:text-pink-800 dark:text-pink-300"
         >
-          Click here to view Week 2
+          Week 2
+        </a>
+        {/* Link to Week 3 */}
+        <a
+          href="/week-3"
+          className="text-pink-400 underline hover:text-pink-800 dark:text-pink-300"
+        >
+          Week 3
         </a>
       </main>
     </div>
