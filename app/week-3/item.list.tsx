@@ -30,7 +30,7 @@ const ItemList: React.FC = () => {
     },
     {
       name: "bananas 🍌",
-      quantity: 6,
+      quantity: 1,
       category: "produce",
     },
     {
@@ -73,6 +73,18 @@ const ItemList: React.FC = () => {
       quantity: 4,
       category: "household",
     },
+    {
+      name: "choclate bar 🍫",
+      quantity: 5,
+      category: "snacks",
+    },
+    {
+      name: "fanta 1L 🍊",
+      quantity: 2,
+      category: "beverages",
+    }
+
+
   ];
 
   return (

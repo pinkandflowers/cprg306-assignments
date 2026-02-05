@@ -1,22 +1,46 @@
 // item.tsx
 import React from "react";
 
-// Define the props interface
+// -------- PROPS INTERFACE --------
+// Defines the data each shopping list item must receive
 interface ItemProps {
   name: string;
   quantity: number;
   category: string;
 }
 
-// Functional component
+// -------- ITEM COMPONENT --------
+// Displays a single shopping list item
 const Item: React.FC<ItemProps> = ({ name, quantity, category }) => {
   return (
-    <li className="flex justify-between items-center bg-white shadow-md rounded-md p-4 mb-2 hover:bg-gray-50 transition">
+    // List item container with soft rose background and hover effect
+    <li className="
+      flex justify-between items-center
+      bg-rose-50 border border-rose-200
+      shadow-sm rounded-xl p-4 mb-3
+      hover:bg-rose-100 transition
+    ">
+      {/* Item name + category */}
       <div className="flex flex-col">
-        <span className="font-semibold text-lg text-gray-800">{name}</span>
-        <span className="text-sm text-gray-500">{category}</span>
+        {/* Item name */}
+        <span className="font-bold text-lg text-rose-700">
+          {name}
+        </span>
+
+        {/* Category label */}
+        <span className="text-sm text-rose-500 capitalize">
+          {category}
+        </span>
       </div>
-      <span className="font-medium text-gray-700">{quantity}</span>
+
+      {/* Quantity badge */}
+      <span className="
+        bg-rose-200 text-rose-800
+        px-3 py-1 rounded-full
+        text-sm font-semibold
+      ">
+        x{quantity}
+      </span>
     </li>
   );
 };

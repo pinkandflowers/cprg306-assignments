@@ -1,19 +1,23 @@
 // app/page.tsx
 import ItemList from "./item.list";
 
-
-// Main page component
-
-
-
+// -------- MAIN PAGE COMPONENT --------
+// This component represents the home page of the app
 export default function Page() {
   return (
-    <main className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold text-pink-500 mb-6">
-        Shopping List
+    // Full-page container with soft pastel background
+    <main className="min-h-screen bg-gradient-to-br from-rose-50 via-rose-50 to-purple-50 p-8">
+      
+      {/* Page title */}
+      <h1 className="text-4xl font-extrabold text-rose-700 mb-6 text-center">
+        🛒 Shopping List
       </h1>
 
-      <ItemList />
+      {/* Card wrapper to center and contain the list */}
+      <section className="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-6 border border-rose-200">
+        <ItemList />
+      </section>
+
     </main>
   );
 }
