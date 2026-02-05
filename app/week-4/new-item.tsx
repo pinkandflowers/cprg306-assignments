@@ -77,25 +77,27 @@ Category: ${category}`
 
         <input
           type="text"
+          min="2"
           value={name} // Controlled input tied to state
           required
           onChange={(e) => setName(e.target.value)} // Updates name as user types
           onBlur={() => setNameTouched(true)} // Marks field as "touched"
+          onFocus={() => setNameTouched(false)} 
 
           // 👇 THIS IS WHERE THE TEXT COLOR FIX LIVES
           className={`w-full px-3 py-2 rounded-2xl border 
             text-rose-900 placeholder-rose-300
             focus:outline-none focus:ring-2 transition
             ${
-              !name && nameTouched
+              !!name && nameTouched
                 ? "border-red-400 focus:ring-red-300 bg-red-50"
                 : "border-rose-300 focus:ring-rose-300 bg-white"
             }`}
           placeholder="e.g. Strawberries 🍓"
         />
 
-        {/* Error message only shows after interaction */}
-        {!name && nameTouched && (
+        {/* Error message only shows after interaction or if less than 2 characters */}
+        {nameTouched && name.trim().length < 2 && (
           <p className="text-red-500 text-sm mt-1">
             Please enter an item - minimum of 2 characters please ❤️
           </p>
@@ -116,7 +118,7 @@ Category: ${category}`
           value={quantity} // Controlled number input
           onChange={(e) => setQuantity(Number(e.target.value))} // Convert to number
           className="
-            w-full px-3 py-2 rounded-lg border 
+            w-full px-3 py-2 rounded-2xl border 
             text-rose-900
             border-rose-300 bg-white 
             focus:outline-none focus:ring-2 focus:ring-rose-300
@@ -134,7 +136,7 @@ Category: ${category}`
           value={category} // Controlled select
           onChange={(e) => setCategory(e.target.value)}
           className="
-            w-full px-3 py-2 rounded-lg border 
+            w-full px-3 py-2 rounded-2xl border 
             text-rose-900
             border-rose-300 bg-white 
             focus:outline-none focus:ring-2 focus:ring-rose-300
