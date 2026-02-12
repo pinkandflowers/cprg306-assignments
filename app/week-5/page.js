@@ -8,7 +8,7 @@ export default function Page() {
             </h1>
 
             {/* Card wrapper to center and contain the list */}
-            <section className="max-w-xl w-full mx-auto bg-white rounded-2xl shadow-lg p-6 border border-rose-200">
+            <section className="max-w-xl  mx-auto bg-white rounded-2xl shadow-lg p-6 border border-rose-200">
                 <ItemList />
             </section>
         </main>
