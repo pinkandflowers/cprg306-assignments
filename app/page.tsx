@@ -53,8 +53,8 @@ export default function Assignments() {
             🛍️ Week 4
           </a>
 
-                    {/* Week 5 */}
-                    <a
+          {/* Week 5 */}
+          <a
             href="/week-5"
             className="
               text-2xl font-semibold text-rose-500
@@ -75,8 +75,19 @@ export default function Assignments() {
             "
           >
              📋 Week 6
-          </a>
+        </a>
 
+        {/* Week 7 */}
+        <a
+            href="/week-7"
+            className="
+              text-2xl font-semibold text-rose-500
+              hover:text-rose-700 transition
+              dark:text-rose-300
+            "
+          >
+             💕 Week 7
+        </a>
         </div>
       </main>
     </div>
