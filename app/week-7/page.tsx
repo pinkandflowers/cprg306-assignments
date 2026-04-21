@@ -6,11 +6,13 @@ import NewItem from "@/app/week-7/new-item"; // Form to add new items
 import itemsData from "@/app/week-7/items.json"; // Initial items data
 import MealIdeas from "@/app/week-7/meal-ideas.js"; // Dynamic meal ideas component
 
+type ItemType = { id?: string; name: string; quantity: number; category: string };
+
 export default function Page() {
   // ---------------------------
   // STATE VARIABLES
   // ---------------------------
-  const [items, setItems] = useState(itemsData); // Shopping list items
+  const [items, setItems] = useState<ItemType[]>(itemsData); // Shopping list items
   const [selectedIngredient, setSelectedIngredient] = useState(""); // Selected item for meal ideas
 
   // ---------------------------
@@ -18,20 +20,21 @@ export default function Page() {
   // ---------------------------
 
   // Add new item to shopping list
-  const handleAddItem = (newItem) => {
+  const handleAddItem = (newItem:any) => {
     setItems((prev) => [...prev, newItem]);
   };
 
   // Handle item click: clean name & set as selected ingredient
-  const handleSelectIngredient = (ingredient) => {
+  const handleSelectIngredient = (ingredient: string) => {
     const cleaned = ingredient
-      .split(",")[0] // Remove everything after comma
-      .replace(
-        /([\u2700-\u27BF]|[\uE000-\uF8FF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\u2011-\u26FF])/g,
-        "" // Remove emojis
-      )
-      .trim();
-
+    .split(",")[0] // Remove everything after comma
+    .replace(
+      /([\u2700-\u27BF]|[\uE000-\uF8FF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\u2011-\u26FF])/g,
+      "" // Remove emojis
+    )
+    .trim();
+    
+    
     setSelectedIngredient(cleaned);
   };
 

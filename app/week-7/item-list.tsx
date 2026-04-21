@@ -3,7 +3,16 @@
 import { useState } from "react";
 import Item from "./item"; // Make sure this points to your Item component file
 
-export default function ItemList({ items, onItemClick }) {
+interface ItemListProps {
+  items: {
+    id?: string;
+    name: string;
+    quantity: number;
+    category: string;
+  }[];
+  onItemClick: (itemName: string) => void;}
+
+export default function ItemList({ items, onItemClick }: ItemListProps) {
   // ---------------------------
   // STATE
   // ---------------------------
@@ -23,7 +32,7 @@ export default function ItemList({ items, onItemClick }) {
   });
 
   // Group items by category for "grouped" view
-  const groupedItems = itemsCopy.reduce((groups, item) => {
+  const groupedItems = itemsCopy.reduce<Record<string, typeof items[0][]>>((groups, item) => {
     if (!groups[item.category]) groups[item.category] = [];
     groups[item.category].push(item);
     return groups;

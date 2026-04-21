@@ -15,7 +15,7 @@ async function fetchMealIdeas(ingredient) {
     console.error("Error fetching meals:", error);
     return [];
   }
-}
+} //The ingredient is coming in but why is the api call failing
 
 // MealIdeas component
 export default function MealIdeas({ ingredient }) {
@@ -29,6 +29,7 @@ export default function MealIdeas({ ingredient }) {
 
   // Call loadMealIdeas whenever ingredient changes
   useEffect(() => {
+    console.log("Ingredient changed:", ingredient);
     if (ingredient) {
       loadMealIdeas();
     }
